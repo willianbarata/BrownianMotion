@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BrownianMotion.MVVM.ViewModel"
+             x:Class="BrownianMotion.MVVM.View.InitialPage"
+             Title="InitialPage"
+             BackgroundColor="Black"
+             >
+    <ContentPage.BindingContext>
+        <local:InitialPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <Grid ColumnDefinitions="6*,2*" RowDefinitions="*">
+        <Border  Margin="40,40,80,40" BackgroundColor="#353541" Stroke="Black" StrokeThickness="2" >
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" >
+                <GraphicsView Drawable="{Binding GraficoDrawable}" BackgroundColor="Black"
+                      Margin="10,10,10,10"
+                              WidthRequest="700"
+                      HeightRequest="400" />
+             
+            </VerticalStackLayout>
+            
+        </Border>
+        
+        <VerticalStackLayout Margin="0,80,80,0" Grid.Column="1">
+            <Label Text="Preço Inicial" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.PrecoInicial}"  TextColor="White" Keyboard="Numeric"/>
+            <Label Text="Volatilidade média (%)" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.VolatilidadeMedia}"  TextColor="White" Keyboard="Numeric"/>
+            <Label Text="Retorno Médio" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.RetornoMedio}"  TextColor="White" Keyboard="Numeric"/>
+            <Label Text="Tempo (dias)" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.Tempo}"  TextColor="White" Keyboard="Numeric"/>
+
+          
+
+            <Button Margin="0,10,0,0" x:Name="GerarSimulacao"  Text="Gerar Simulação" Command="{Binding GerarGraficoCommand}" />
+            <Label Margin="0,10,0,0" HorizontalOptions="Center" FontSize="10" Grid.Column="0" Grid.Row="1"  Text="Todos os campos devem ser preenchidos corretamente." TextColor="Red" IsVisible="{Binding DadosIniciais.MsgErro}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

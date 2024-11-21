@@ -1,4 +1,6 @@
-﻿namespace BrownianMotion
+﻿using BrownianMotion.MVVM.View;
+
+namespace BrownianMotion
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new InitialPage();
         }
     }
 }

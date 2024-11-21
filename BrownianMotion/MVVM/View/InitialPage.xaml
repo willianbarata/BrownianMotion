@@ -22,16 +22,16 @@
         </Border>
         
         <VerticalStackLayout Margin="0,80,80,0" Grid.Column="1">
-            <Label Text="Preço Inicial" TextColor="White"/>
-            <Entry Text="{Binding DadosIniciais.PrecoInicial}"  TextColor="White" Keyboard="Numeric"/>
-            <Label Text="Volatilidade média (%)" TextColor="White"/>
-            <Entry Text="{Binding DadosIniciais.VolatilidadeMedia}"  TextColor="White" Keyboard="Numeric"/>
-            <Label Text="Retorno Médio" TextColor="White"/>
-            <Entry Text="{Binding DadosIniciais.RetornoMedio}"  TextColor="White" Keyboard="Numeric"/>
-            <Label Text="Tempo (dias)" TextColor="White"/>
-            <Entry Text="{Binding DadosIniciais.Tempo}"  TextColor="White" Keyboard="Numeric"/>
+            <Label HorizontalTextAlignment="Center" Margin="0,10,0,10" Text="Preço Inicial" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.PrecoInicial}"  BackgroundColor="#1a1a1a"  TextColor="White" Keyboard="Numeric"/>
+            <Label HorizontalTextAlignment="Center" Margin="0,10,0,10" Text="Volatilidade média (%)" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.VolatilidadeMedia}"  BackgroundColor="#1a1a1a"  TextColor="White" Keyboard="Numeric"/>
+            <Label HorizontalTextAlignment="Center" Margin="0,10,0,10"  Text="Retorno Médio" TextColor="White"/>
+            <Entry Text="{Binding DadosIniciais.RetornoMedio}"  BackgroundColor="#1a1a1a"  TextColor="White" Keyboard="Numeric"/>
+            <Label HorizontalTextAlignment="Center" Margin="0,10,0,10"  Text="Tempo (dias)" TextColor="White"/>
 
-          
+            <Entry Text="{Binding DadosIniciais.Tempo}" BackgroundColor="#1a1a1a"  TextColor="White" Keyboard="Numeric"/>
+
 
             <Button Margin="0,10,0,0" x:Name="GerarSimulacao"  Text="Gerar Simulação" Command="{Binding GerarGraficoCommand}" />
             <Label Margin="0,10,0,0" HorizontalOptions="Center" FontSize="10" Grid.Column="0" Grid.Row="1"  Text="Todos os campos devem ser preenchidos corretamente." TextColor="Red" IsVisible="{Binding DadosIniciais.MsgErro}"/>
